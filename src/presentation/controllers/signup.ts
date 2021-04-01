@@ -5,7 +5,7 @@ import { HttpRequest, HttpResponse } from '../protocols/http'
 
 export class SingUpController {
     handle (httpRequest: HttpRequest): HttpResponse {
-        const requiredFields = ['name', 'email']
+        const requiredFields = ['name', 'email', 'password']
         for (const filed of requiredFields) {
             if (!httpRequest.body[filed]) {
                 return badRequest(new MissingParamError(filed))
