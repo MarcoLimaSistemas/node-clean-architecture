@@ -1,9 +1,9 @@
 'use strict'
 
-import { AddAccount } from '../../../domain/usecases/add-account'
 import { badRequest, ok, serverError } from '../../helper/http-helper'
 import { InvalidParamError, MissingParamError } from '../../errors'
 import { Controller, EmailValidator, HttpRequest, HttpResponse } from './singup-protocols'
+import { AddAccount } from '../../../domain/usecases/add-account'
 
 export class SingUpController implements Controller {
     private readonly emailValidator: EmailValidator
