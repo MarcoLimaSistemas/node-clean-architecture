@@ -1,7 +1,7 @@
 'use strict'
 
 import { AddAccount } from '../../../domain/usecases/add-account'
-import { badRequest, serverError } from '../../helper/http-helper'
+import { badRequest, ok, serverError } from '../../helper/http-helper'
 import { InvalidParamError, MissingParamError } from '../../errors'
 import { Controller, EmailValidator, HttpRequest, HttpResponse } from './singup-protocols'
 
@@ -35,10 +35,7 @@ export class SingUpController implements Controller {
                 password
             })
 
-            return {
-                statusCode: 200,
-                body: account
-            }
+            return ok(account)
         } catch {
             return serverError()
         }
