@@ -1,10 +1,9 @@
 'use strict'
-import { AddAccountModel } from './../../domain/usecases/add-account'
+
 import { SingUpController } from './signup'
-import { InvalidParamError, MissingParamError, ServerError } from '../errors'
-import { EmailValidator } from '../protocols'
-import { AddAccount } from '../../domain/usecases/add-account'
-import { AccountModel } from '../../domain/models/account'
+import { InvalidParamError, MissingParamError, ServerError } from '../../errors'
+import { AccountModel } from '../../../domain/models/account'
+import { AddAccount, AddAccountModel, EmailValidator } from './singup-protocols'
 
 interface SutTypes {
     sut: SingUpController
