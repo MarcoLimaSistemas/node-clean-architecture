@@ -1,10 +1,7 @@
 'use strict'
 import { EmailValidator } from './../protocols/email-validator'
-import { InvalidParamError } from '../errors/invalid-param-error'
-import { MissingParamError } from './../errors/missing-param-error'
-
 import { SingUpController } from './signup'
-import { ServerError } from '../errors/server-error'
+import { InvalidParamError, MissingParamError, ServerError } from '../errors'
 
 interface SutTypes {
     sut: SingUpController
