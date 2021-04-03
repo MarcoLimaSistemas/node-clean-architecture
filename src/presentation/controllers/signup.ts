@@ -1,10 +1,11 @@
 'use strict'
-import { InvalidParamError } from './../errors/invalid-param-error'
+
 import { EmailValidator } from './../protocols/email-validator'
 import { Controller } from './../protocols/controller'
-import { MissingParamError } from './../errors/missing-param-error'
+
 import { badRequest, serverError } from './../helper/http-helper'
 import { HttpRequest, HttpResponse } from '../protocols/http'
+import { InvalidParamError, MissingParamError } from '../errors'
 
 export class SingUpController implements Controller {
     private readonly emailValidator: EmailValidator
